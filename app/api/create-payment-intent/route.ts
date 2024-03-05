@@ -19,8 +19,6 @@ export async function POST(req: Request) {
     const body = await req.json();
     const {booking, payment_intent_id} = body;
 
-    const hotelId = booking.hotelId;
-
     const bookingData = {
         ...booking,
         userName: user.firstName,
@@ -28,7 +26,6 @@ export async function POST(req: Request) {
         userId: user.id,
         currency: 'usd',
         paymentIntentId: payment_intent_id,
-         hotelId: hotelId
     
 
     }
